@@ -18,9 +18,9 @@ public class Brunosbox
             {"9 - 10", 
              "9 - 10", 
              "9 - 10", 
-             "8 - 10", // knockdown
-             "10 - 8", // knockdown
-             "10 - 8", // referee point deduction
+             "9 - 10",
+             "10 - 9",
+             "10 - 9",
              "10 - 9", 
              "9 - 10", 
              "10 - 9", 
@@ -68,8 +68,8 @@ public class Brunosbox
          * Rocky Balboa vs Apolo Creed
          */
         
-        whiteScoreCard.setRCorner("Apolo Creed");
-        whiteScoreCard.setLCorner("Rocky Balboa");
+        whiteScoreCard.setRCorner("Rocky Balboa");
+        whiteScoreCard.setBCorner("Apolo Creed");
 
         /**
          * Muestra la tarjeta por consola con
@@ -79,5 +79,34 @@ public class Brunosbox
 
         System.out.println(whiteScoreCard);
 
+
+        /**
+         * Crea una clase llamada RegularRound
+         * que implemente la interfaz Round.
+         * 
+         * Crea un round del tipo "10 - 9"
+         * Muestra la puntuación obtenida por
+         * cada boxeador.
+         * 
+         * En el round la puntuacion se almacena
+         * como un número entero, no como un String.
+         * 
+         * Pasa el caso test que propongo.
+         */
+
+        RegularRound round = new RegularRound("10 - 9");
+        round.boxerRoundScore();
+        System.out.println("\n\t Regular round\t" + round.getRedBoxerScore() +
+                            " - " + round.getBlueBoxerScore());
+
+        /**
+         * Carga los puntos de todos los rounds
+         * en la tarjeta blanca.
+         * 
+         * La tarjeta blanca es el primer array
+         * del array data.
+         */
+
+        // whiteScoreCard.loadJugdeScoreCard(data[0]); // tu codigo aqui
     }
 }

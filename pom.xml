@@ -64,7 +64,7 @@
             <archive>
               <manifest>
                 <addClasspath>true</addClasspath>
-                <mainClass>edu.badpals.Brunosbox</mainClass>
+                <mainClass>edu.badpals.brunosbox.Brunosbox</mainClass>
               </manifest>
               <manifestEntries>
                 <url>${project.url}</url>
@@ -79,7 +79,7 @@
           <configuration>
             <archive>
               <manifest>
-                <mainClass>edu.badpals.Brunosbox</mainClass>
+                <mainClass>edu.badpals.brunosbox.Brunosbox</mainClass>
               </manifest>
             </archive>
             <descriptorRefs>

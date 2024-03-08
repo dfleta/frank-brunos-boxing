@@ -24,7 +24,7 @@ public class Brunosbox
              "10 - 9", 
              "9 - 10", 
              "10 - 9", 
-             "10 - 9"},
+             "9 - 10"},
             
              // ScoreCard Blue
             {"9 - 10", 
@@ -117,8 +117,19 @@ public class Brunosbox
          * y muestralo en la tarjeta.
          */
         
-        System.out.println("\t Final Score: " + whiteScoreCard.getRedBoxerFinalScore() + 
-                           " - " + whiteScoreCard.getBlueBoxerFinalScore() + " Final Score");
+        System.out.println("\t FINAL SCORE: " + whiteScoreCard.getRedBoxerFinalScore() + 
+                           " - " + whiteScoreCard.getBlueBoxerFinalScore() + " FINAL SCORE");
 
+        /**
+         * Calcula los puntos acumulados en cada
+         * round de cada pugil y muestralo en la tarjeta.
+         */
+
+        System.out.println(whiteScoreCard);
+        System.out.println("\t FINAL SCORE: " + whiteScoreCard.getRedBoxerFinalScore() + 
+        " - " + whiteScoreCard.getBlueBoxerFinalScore() + " FINAL SCORE");
+
+        
+        
     }
 }

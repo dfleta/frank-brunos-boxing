@@ -33,9 +33,9 @@ public class ScoreCard {
 
     @Override
     public String toString() {
-        return "\n\t\t   " + this.color + 
-                "\n\t" + this.blueCorner + "\t" + this.redCorner +
-                "\n\t\t" + this.getNumRounds() + " rounds\n" +
+        return "\n\t\t\t   " + this.color + 
+                "\n\t\t" + this.blueCorner + "\t" + this.redCorner +
+                "\n\t\t\t" + this.getNumRounds() + " rounds\n" +
                 this.viewRounds();
     }
 
@@ -64,10 +64,22 @@ public class ScoreCard {
     }
 
     private String viewRounds() {
-        String view = "\t Round Score" + "\tRound" + "\tRound Score" ;
+        
+        String view = "\t Round \t Score \t Round \t Score \t Round\n" +
+                      "\t Score \t Total \t       \t Total \t Score";
+        
         byte roundNum = 1;
+        
+        byte redBoxerScoreTotal = 0;
+        byte blueBoxerScoreTotal = 0;
+
         for(Round round : this.rounds) {
-            view += "\n\t\t" + round.getRedBoxerScore() + "\t" + roundNum + "\t" + round.getBlueBoxerScore();
+            view += String.format("\n\t %d \t %d \t %d \t %d \t %d", 
+                    round.getRedBoxerScore(),
+                    redBoxerScoreTotal += round.getRedBoxerScore(),
+                    roundNum++, 
+                    blueBoxerScoreTotal += round.getBlueBoxerScore(),
+                    round.getBlueBoxerScore());
         }
         return view;
     }

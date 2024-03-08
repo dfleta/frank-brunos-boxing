@@ -100,13 +100,16 @@ public class Brunosbox
                             " - " + round.getBlueBoxerScore());
 
         /**
-         * Carga los puntos de todos los rounds
-         * en la tarjeta blanca.
+         * Carga en la tarjeta blanca 
+         * los puntos de todos los rounds
+         * de la primera tarjeta del array data.
          * 
-         * La tarjeta blanca es el primer array
-         * del array data.
+         * Cada round es un objeto del tipo RegularRound.
+         * La tarjeta blanca es una colección de objetos
+         * de tipo Round.
          */
 
-        // whiteScoreCard.loadJugdeScoreCard(data[0]); // tu codigo aqui
+        whiteScoreCard.loadJugdeScoreCard(data[0]); // tu codigo aqui
+        System.out.println(whiteScoreCard);
     }
 }

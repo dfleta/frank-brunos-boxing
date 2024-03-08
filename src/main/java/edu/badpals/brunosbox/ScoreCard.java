@@ -23,21 +23,38 @@ public class ScoreCard {
         this.blueCorner = boxerName;
     };
 
+    public byte getNumRounds() {
+        return (byte) this.rounds.size();
+    }
+
+    public List<Round> getRounds() {
+        return this.rounds;
+    }
+
     @Override
     public String toString() {
-        return "\n\t\t\t" + this.color + 
-                "\n\t" + this.blueCorner + "\t" + this.redCorner;
+        return "\n\t\t   " + this.color + 
+                "\n\t" + this.blueCorner + "\t" + this.redCorner +
+                "\n\t\t" + this.getNumRounds() + " rounds\n" +
+                this.viewRounds();
+            
                 // numero rounds
     }
 
     public void loadJugdeScoreCard(String[] judgeScoreCard) {
         this.judgeScoreCard = judgeScoreCard;
-        this.scoreCardToRounds();
-    }
 
-    private void scoreCardToRounds() {
         for(String roundScore : this.judgeScoreCard) {
             this.rounds.add(RoundFactory.getRound(roundScore));
         }
+    }
+
+    private String viewRounds() {
+        String view = "\t Round Score" + "\tRound" + "\tRound Score" ;
+        byte roundNum = 1;
+        for(Round round : this.rounds) {
+            view += "\n\t\t" + round.getRedBoxerScore() + "\t" + roundNum + "\t" + round.getBlueBoxerScore();
+        }
+        return view;
     }
 }

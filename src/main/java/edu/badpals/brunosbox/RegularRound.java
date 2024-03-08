@@ -25,11 +25,11 @@ class RegularRound implements Round {
         this.blueBoxerScore = Byte.parseByte(blueBoxerRoundScore.toString());
     }
 
-    byte getRedBoxerScore() {
+    public byte getRedBoxerScore() {
         return this.redBoxerScore;
     }
 
-    byte getBlueBoxerScore() {
+    public byte getBlueBoxerScore() {
         return this.blueBoxerScore;
     }
 

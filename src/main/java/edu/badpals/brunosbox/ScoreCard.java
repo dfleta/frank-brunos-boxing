@@ -37,8 +37,6 @@ public class ScoreCard {
                 "\n\t" + this.blueCorner + "\t" + this.redCorner +
                 "\n\t\t" + this.getNumRounds() + " rounds\n" +
                 this.viewRounds();
-            
-                // numero rounds
     }
 
     public void loadJugdeScoreCard(String[] judgeScoreCard) {
@@ -47,6 +45,22 @@ public class ScoreCard {
         for(String roundScore : this.judgeScoreCard) {
             this.rounds.add(RoundFactory.getRound(roundScore));
         }
+    }
+
+    public int getRedBoxerFinalScore() {
+        return this.getRounds()
+                    .stream()
+                    .map(Round::getRedBoxerScore)
+                    .map(Byte::intValue)
+                    .reduce(0, Integer::sum);
+    }
+
+    public int getBlueBoxerFinalScore() {
+        return this.getRounds()
+                    .stream()
+                    .map(Round::getBlueBoxerScore)
+                    .map(Byte::intValue)
+                    .reduce(0, Integer::sum);
     }
 
     private String viewRounds() {

@@ -109,7 +109,16 @@ public class Brunosbox
          * de tipo Round.
          */
 
-        whiteScoreCard.loadJugdeScoreCard(data[0]); // tu codigo aqui
+        whiteScoreCard.loadJugdeScoreCard(data[0]); // tu codigo para acceder a data aqui
         System.out.println(whiteScoreCard);
+
+        /**
+         * Calcula el final score de cada pugil
+         * y muestralo en la tarjeta.
+         */
+        
+        System.out.println("\t Final Score: " + whiteScoreCard.getRedBoxerFinalScore() + 
+                           " - " + whiteScoreCard.getBlueBoxerFinalScore() + " Final Score");
+
     }
 }

@@ -29,7 +29,7 @@ public class ScoreCardTest {
     @Test
     public void loadJugdeScoreCardTest() {
 
-        card.loadJugdeScoreCard(judgeScoreCard);
+        card.loadJudgeScoreCard(judgeScoreCard);
         assertEquals(10, card.getNumRounds());
         assertTrue(card.getRounds().stream().allMatch(a -> a instanceof Round));
         assertTrue(card.getRounds().stream().allMatch(a -> a instanceof RegularRound));
@@ -37,7 +37,7 @@ public class ScoreCardTest {
 
     @Test
     public void getRedBoxerFinalScoreTest() {
-        card.loadJugdeScoreCard(judgeScoreCard);
+        card.loadJudgeScoreCard(judgeScoreCard);
         assertEquals(94, card.getRedBoxerFinalScore());
         assertEquals(96, card.getBlueBoxerFinalScore());
     }

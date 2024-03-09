@@ -39,7 +39,7 @@ public class ScoreCard {
                 this.viewRounds();
     }
 
-    public void loadJugdeScoreCard(String[] judgeScoreCard) {
+    public void loadJudgeScoreCard(String[] judgeScoreCard) {
         this.judgeScoreCard = judgeScoreCard;
 
         for(String roundScore : this.judgeScoreCard) {

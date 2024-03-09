@@ -14,7 +14,7 @@ public class Brunosbox
 
         String[][] data = {
 
-            // ScoreCard White
+            //  White ScoreCard
             {"9 - 10", 
              "9 - 10", 
              "9 - 10", 
@@ -26,7 +26,7 @@ public class Brunosbox
              "10 - 9", 
              "9 - 10"},
             
-             // ScoreCard Blue
+             // Blue ScoreCard
             {"9 - 10", 
              "9 - 10", 
              "9 - 10", 
@@ -38,7 +38,7 @@ public class Brunosbox
              "10 - 9", 
              "10 - 9"},
 
-            // ScoreCard Pink
+            // Pink ScoreCard
             {"9 - 10", 
              "9 - 10", 
              "9 - 10", 
@@ -58,18 +58,18 @@ public class Brunosbox
         /**
          * Crea una tarjeta de puntos de boxeo
          * a partir de la tarjeta blanca entregada
-         *  por el juez blanco.
+         * por el juez blanco.
          */
 
         ScoreCard whiteScoreCard = new ScoreCard("White");
 
         /**
          * Asigna el nombre de los pugiles
-         * Rocky Balboa vs Apolo Creed
+         * Rocky Balboa (red) vs Apollo Creed (blue)
          */
         
         whiteScoreCard.setRCorner("Rocky Balboa");
-        whiteScoreCard.setBCorner("Apolo Creed");
+        whiteScoreCard.setBCorner("Apollo Creed");
 
         /**
          * Muestra la tarjeta por consola con
@@ -84,11 +84,11 @@ public class Brunosbox
          * Crea una clase llamada RegularRound
          * que implemente la interfaz Round.
          * 
-         * Crea un round del tipo "10 - 9"
+         * Crea un round del tipo "10 - 9".
          * Muestra la puntuación obtenida por
          * cada boxeador.
          * 
-         * En el round la puntuacion se almacena
+         * En el Round la puntuacion se almacena
          * como un número entero, no como un String.
          * 
          * Pasa el caso test que propongo.
@@ -107,14 +107,18 @@ public class Brunosbox
          * Cada round es un objeto del tipo RegularRound.
          * La tarjeta blanca es una colección de objetos
          * de tipo Round.
+         * 
+         * Al mostrar la tarjeta se observan los 
+         * puntos obtenidos por cada pugil en cada round.
+         * Se llaman round score.
          */
 
-        whiteScoreCard.loadJugdeScoreCard(data[0]); // tu codigo para acceder a data aqui
+        whiteScoreCard.loadJudgeScoreCard(data[0]); // tu codigo para acceder a data aqui
         System.out.println(whiteScoreCard);
 
         /**
-         * Calcula el final score de cada pugil
-         * y muestralo en la tarjeta.
+         * Calcula el final score o puntuación total
+         * de cada pugil y muestralo en la tarjeta.
          */
         
         System.out.println("\t FINAL SCORE: " + whiteScoreCard.getRedBoxerFinalScore() + 

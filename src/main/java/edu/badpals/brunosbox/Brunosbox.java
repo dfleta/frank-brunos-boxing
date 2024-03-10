@@ -193,7 +193,9 @@ public class Brunosbox
          */
 
         ScoreCard blueScoreCard = new ScoreCard("Blue");
-
+        blueScoreCard.setRCorner("Rocky Balboa");
+        blueScoreCard.setBCorner("Apollo Creed");
+ 
         blueScoreCard.loadJudgeScoreCard(data[1]); // tu codigo para acceder a data aqui
         System.out.println(blueScoreCard);
 
@@ -202,7 +204,7 @@ public class Brunosbox
          * de cada pugil y muestralo en la tarjeta.
          */
         
-         System.out.println("\t FINAL SCORE: " + blueScoreCard.getRedBoxerFinalScore() + 
+        System.out.println("\t FINAL SCORE: " + blueScoreCard.getRedBoxerFinalScore() + 
          " - " + blueScoreCard.getBlueBoxerFinalScore() + " FINAL SCORE");
 
     }

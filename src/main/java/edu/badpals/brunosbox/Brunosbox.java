@@ -42,9 +42,9 @@ public class Brunosbox
             {"9 - 10", 
              "9 - 10", 
              "9 - 10", 
-             "1 8 - 10", // referee point deduction
+             "1, 8 - 10", // referee point deduction
              "10 - 8", // knockdown
-             "10 - 8 1", // referee point deduction
+             "10 - 8 ,1", // referee point deduction
              "10 - 9", 
              "9 - 10", 
              "10 - 9", 
@@ -61,7 +61,7 @@ public class Brunosbox
          * por el juez blanco.
          */
 
-        ScoreCard whiteScoreCard = new ScoreCard("White");
+        ScoreCard whiteScoreCard = new ScoreCard("WHITE");
 
         /**
          * Asigna el nombre de los pugiles
@@ -144,12 +144,11 @@ public class Brunosbox
          * 
          * En KnockdownRound la puntuacion se almacena
          * como un número entero, no como un String.
-         * 
          */
 
         KnockdownRound knockdownRound = new KnockdownRound("10 - 8");
         knockdownRound.boxerRoundScore();
-        System.out.println("\n\t Regular round\t" + knockdownRound.getRedBoxerScore() +
+        System.out.println("\n\t knockdown round\t" + knockdownRound.getRedBoxerScore() +
                              " - " + knockdownRound.getBlueBoxerScore());
                         
         /**
@@ -165,8 +164,8 @@ public class Brunosbox
 
         RegularRound regular = (RegularRound) RoundFactory.getRound("9 - 10");
         System.out.println("\t regular round: " + regular);
-        KnockdownRound knockout = (KnockdownRound) RoundFactory.getRound("8 - 10");
-        System.out.println("\t knockout round: " + knockout);
+        KnockdownRound knockdown = (KnockdownRound) RoundFactory.getRound("8 - 10");
+        System.out.println("\t knockdown round: " + knockdown);
 
  
         /**
@@ -192,8 +191,10 @@ public class Brunosbox
          * Se llaman score total.
          */
 
-        ScoreCard blueScoreCard = new ScoreCard("Blue");
-
+        ScoreCard blueScoreCard = new ScoreCard("BLUE");
+        blueScoreCard.setRCorner("Rocky Balboa");
+        blueScoreCard.setBCorner("Apollo Creed");
+ 
         blueScoreCard.loadJudgeScoreCard(data[1]); // tu codigo para acceder a data aqui
         System.out.println(blueScoreCard);
 
@@ -202,8 +203,83 @@ public class Brunosbox
          * de cada pugil y muestralo en la tarjeta.
          */
         
-         System.out.println("\t FINAL SCORE: " + blueScoreCard.getRedBoxerFinalScore() + 
+        System.out.println("\t FINAL SCORE: " + blueScoreCard.getRedBoxerFinalScore() + 
          " - " + blueScoreCard.getBlueBoxerFinalScore() + " FINAL SCORE");
+
+        /**
+         * Crea una clase llamada PointsDeducted
+         * que implemente la interfaz Round.
+         * 
+         * Crea un round del tipo "10 - 8 1" o "1 8 -10".
+         * Muestra la puntuación obtenida por
+         * cada boxeador.
+         * 
+         * En PointsDeducted la puntuacion se almacena
+         * como un número entero, no como un String.
+         */
+
+        PointsDeducted deducted = new PointsDeducted("10 - 8 ,1");
+        deducted.boxerRoundScore();
+        System.out.println("\n\t points deducted round\t" + deducted.getRedBoxerScore() +
+                              " - " + deducted.getBlueBoxerScore());
+        
+        deducted = new PointsDeducted("1, 8 - 10");
+        deducted.boxerRoundScore();
+        System.out.println("\n\t points deducted round\t" + deducted.getRedBoxerScore() +
+                                                    " - " + deducted.getBlueBoxerScore());  
+        
+         /**
+         * Extiende o modifica la clase RoundFactory para crear
+         * un objeto de tipo PointsDeducted
+         * si la puntuación indicada por el /la juez
+         * es "10 - 8 ,1" o "1, 8 - 10".
+         * 
+         * Si el metodo getRound() no construye el tipo indicado
+         * en el casting, las siguiente línea dará error
+         * en tiempo de ejecución.
+         */
+
+        PointsDeducted pointsDeducted = (PointsDeducted) RoundFactory.getRound("1, 8 - 10");
+        System.out.println("\t deducted round: " + pointsDeducted);
+
+        /**
+         * Carga en la tarjeta pink 
+         * los puntos de todos los rounds
+         * de la tercera tarjeta del array data.
+         * 
+         * Cada round es un objeto del tipo RegularRound, 
+         * KnockdownRound o PointsDeducted.
+         * La tarjeta rosa es una colección de objetos
+         * de tipo Round.
+         * 
+         * El metodo loadJudgeScoreCard() hace uso del
+         * metodo getRound() de la clase RoundFactory
+         * para obtener el tipo de round indicado en la 
+         * tarjeta del juez.
+         * 
+         * Al mostrar la tarjeta se observan los 
+         * puntos obtenidos por cada pugil en cada round.
+         * Se llaman round score.
+         * 
+         * Calcula los puntos acumulados en cada
+         * round de cada pugil y muestralo en la tarjeta.
+         * Se llaman score total.
+         */
+
+        ScoreCard pinkScoreCard = new ScoreCard("PINK");
+        pinkScoreCard.setRCorner("Rocky Balboa");
+        pinkScoreCard.setBCorner("Apollo Creed");
+  
+        pinkScoreCard.loadJudgeScoreCard(data[2]); // tu codigo para acceder a data aqui
+        System.out.println(pinkScoreCard);
+
+        /**
+         * Calcula el final score o puntuación total
+         * de cada pugil y muestralo en la tarjeta.
+         */
+        
+         System.out.println("\t FINAL SCORE: " + pinkScoreCard.getRedBoxerFinalScore() + 
+         " - " + pinkScoreCard.getBlueBoxerFinalScore() + " FINAL SCORE");
 
     }
 }

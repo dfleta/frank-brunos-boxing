@@ -32,7 +32,7 @@ public class Brunosbox
              "9 - 10", 
              "8 - 10", // knockdown
              "10 - 8", // knockdown
-             "10 - 8", // referee point deduction
+             "10 - 8",
              "10 - 9", 
              "9 - 10", 
              "10 - 9", 
@@ -42,9 +42,9 @@ public class Brunosbox
             {"9 - 10", 
              "9 - 10", 
              "9 - 10", 
-             "8 - 10", // knockdown
+             "1 8 - 10", // referee point deduction
              "10 - 8", // knockdown
-             "10 - 8", // referee point deduction
+             "10 - 8 1", // referee point deduction
              "10 - 9", 
              "9 - 10", 
              "10 - 9", 

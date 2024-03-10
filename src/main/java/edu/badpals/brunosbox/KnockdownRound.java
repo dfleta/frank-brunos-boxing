@@ -1,19 +1,15 @@
 package edu.badpals.brunosbox;
 
-class RegularRound implements Round {
+
+class KnockdownRound implements Round {
 
     private final String roundScore;
     private byte redBoxerScore;
     private byte blueBoxerScore;
 
-
-    RegularRound(String roundScore) {
+    KnockdownRound(String roundScore) {
         this.roundScore = roundScore.replaceAll("\\s", "");
         this.boxerRoundScore();
-    }
-
-    String getRoundScore() {
-        return this.roundScore;
     }
 
     @Override

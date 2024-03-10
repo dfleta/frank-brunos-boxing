@@ -61,7 +61,7 @@ public class Brunosbox
          * por el juez blanco.
          */
 
-        ScoreCard whiteScoreCard = new ScoreCard("White");
+        ScoreCard whiteScoreCard = new ScoreCard("WHITE");
 
         /**
          * Asigna el nombre de los pugiles
@@ -191,7 +191,7 @@ public class Brunosbox
          * Se llaman score total.
          */
 
-        ScoreCard blueScoreCard = new ScoreCard("Blue");
+        ScoreCard blueScoreCard = new ScoreCard("BLUE");
         blueScoreCard.setRCorner("Rocky Balboa");
         blueScoreCard.setBCorner("Apollo Creed");
  
@@ -241,6 +241,45 @@ public class Brunosbox
 
         PointsDeducted pointsDeducted = (PointsDeducted) RoundFactory.getRound("1, 8 - 10");
         System.out.println("\t deducted round: " + pointsDeducted);
+
+        /**
+         * Carga en la tarjeta pink 
+         * los puntos de todos los rounds
+         * de la tercera tarjeta del array data.
+         * 
+         * Cada round es un objeto del tipo RegularRound, 
+         * KnockdownRound o PointsDeducted.
+         * La tarjeta rosa es una colección de objetos
+         * de tipo Round.
+         * 
+         * El metodo loadJudgeScoreCard() hace uso del
+         * metodo getRound() de la clase RoundFactory
+         * para obtener el tipo de round indicado en la 
+         * tarjeta del juez.
+         * 
+         * Al mostrar la tarjeta se observan los 
+         * puntos obtenidos por cada pugil en cada round.
+         * Se llaman round score.
+         * 
+         * Calcula los puntos acumulados en cada
+         * round de cada pugil y muestralo en la tarjeta.
+         * Se llaman score total.
+         */
+
+        ScoreCard pinkScoreCard = new ScoreCard("PINK");
+        pinkScoreCard.setRCorner("Rocky Balboa");
+        pinkScoreCard.setBCorner("Apollo Creed");
+  
+        pinkScoreCard.loadJudgeScoreCard(data[2]); // tu codigo para acceder a data aqui
+        System.out.println(pinkScoreCard);
+
+        /**
+         * Calcula el final score o puntuación total
+         * de cada pugil y muestralo en la tarjeta.
+         */
+        
+         System.out.println("\t FINAL SCORE: " + pinkScoreCard.getRedBoxerFinalScore() + 
+         " - " + pinkScoreCard.getBlueBoxerFinalScore() + " FINAL SCORE");
 
     }
 }

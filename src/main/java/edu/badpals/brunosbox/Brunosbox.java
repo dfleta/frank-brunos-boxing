@@ -141,17 +141,50 @@ public class Brunosbox
          * Muestra la puntuación obtenida por
          * cada boxeador.
          * 
-         * En Round la puntuacion se almacena
+         * En KnockdownRound la puntuacion se almacena
          * como un número entero, no como un String.
          * 
-         * Pasa el caso test que propongo.
          */
 
         KnockdownRound knockdownRound = new KnockdownRound("10 - 8");
         knockdownRound.boxerRoundScore();
         System.out.println("\n\t Regular round\t" + knockdownRound.getRedBoxerScore() +
                              " - " + knockdownRound.getBlueBoxerScore());
+                        
+        /**
+         * Crea una clase RoundFactory que crea
+         * un objeto de tipo RegularRound o KnockdownRound
+         * segun si la puntuación indicada por el /la juez
+         * es "10 - 9" o "10 - 8".
+         * 
+         * Si el metodo getRound() no devuelve el tipo indicado
+         * en el casting, las siguientes dos líneas daran error
+         * en tiempo de ejecución.
+         */
+
+        RegularRound regular = (RegularRound) RoundFactory.getRound("9 - 10");
+        System.out.println("\t regular round: " + regular);
+        KnockdownRound knockout = (KnockdownRound) RoundFactory.getRound("8 - 10");
+        System.out.println("\t knockout round: " + knockout);
+
  
-        
+        /**
+         * Carga en la tarjeta blue 
+         * los puntos de todos los rounds
+         * de la segunda tarjeta del array data.
+         * 
+         * Cada round es un objeto del tipo RegularRound o KnockdownRound.
+         * La tarjeta azul es una colección de objetos
+         * de tipo Round.
+         * 
+         * Al mostrar la tarjeta se observan los 
+         * puntos obtenidos por cada pugil en cada round.
+         * Se llaman round score.
+         *
+
+        ScoreCard blueScoreCard = new ScoreCard("White");
+
+        blueScoreCard.loadJudgeScoreCard(data[1]); // tu codigo para acceder a data aqui
+        System.out.println(blueScoreCard); */
     }
 }

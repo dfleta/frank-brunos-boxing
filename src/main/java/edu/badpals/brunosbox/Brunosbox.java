@@ -127,6 +127,7 @@ public class Brunosbox
         /**
          * Calcula los puntos acumulados en cada
          * round de cada pugil y muestralo en la tarjeta.
+         * Se llaman score total.
          */
 
         System.out.println(whiteScoreCard);
@@ -157,8 +158,8 @@ public class Brunosbox
          * segun si la puntuación indicada por el /la juez
          * es "10 - 9" o "10 - 8".
          * 
-         * Si el metodo getRound() no devuelve el tipo indicado
-         * en el casting, las siguientes dos líneas daran error
+         * Si el metodo getRound() no construye el tipo indicado
+         * en el casting, las siguientes líneas daran error
          * en tiempo de ejecución.
          */
 
@@ -177,14 +178,32 @@ public class Brunosbox
          * La tarjeta azul es una colección de objetos
          * de tipo Round.
          * 
+         * El metodo loadJudgeScoreCard() hace uso del
+         * metodo getRound() de la clase RoundFactory
+         * para obtener el tipo de round indicado en la 
+         * tarjeta del juez.
+         * 
          * Al mostrar la tarjeta se observan los 
          * puntos obtenidos por cada pugil en cada round.
          * Se llaman round score.
-         *
+         * 
+         * Calcula los puntos acumulados en cada
+         * round de cada pugil y muestralo en la tarjeta.
+         * Se llaman score total.
+         */
 
-        ScoreCard blueScoreCard = new ScoreCard("White");
+        ScoreCard blueScoreCard = new ScoreCard("Blue");
 
         blueScoreCard.loadJudgeScoreCard(data[1]); // tu codigo para acceder a data aqui
-        System.out.println(blueScoreCard); */
+        System.out.println(blueScoreCard);
+
+        /**
+         * Calcula el final score o puntuación total
+         * de cada pugil y muestralo en la tarjeta.
+         */
+        
+         System.out.println("\t FINAL SCORE: " + blueScoreCard.getRedBoxerFinalScore() + 
+         " - " + blueScoreCard.getBlueBoxerFinalScore() + " FINAL SCORE");
+
     }
 }

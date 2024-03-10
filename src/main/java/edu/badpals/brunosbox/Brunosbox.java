@@ -42,9 +42,9 @@ public class Brunosbox
             {"9 - 10", 
              "9 - 10", 
              "9 - 10", 
-             "1 8 - 10", // referee point deduction
+             "1, 8 - 10", // referee point deduction
              "10 - 8", // knockdown
-             "10 - 8 1", // referee point deduction
+             "10 - 8 ,1", // referee point deduction
              "10 - 9", 
              "9 - 10", 
              "10 - 9", 
@@ -144,12 +144,11 @@ public class Brunosbox
          * 
          * En KnockdownRound la puntuacion se almacena
          * como un número entero, no como un String.
-         * 
          */
 
         KnockdownRound knockdownRound = new KnockdownRound("10 - 8");
         knockdownRound.boxerRoundScore();
-        System.out.println("\n\t Regular round\t" + knockdownRound.getRedBoxerScore() +
+        System.out.println("\n\t knockdown round\t" + knockdownRound.getRedBoxerScore() +
                              " - " + knockdownRound.getBlueBoxerScore());
                         
         /**
@@ -165,8 +164,8 @@ public class Brunosbox
 
         RegularRound regular = (RegularRound) RoundFactory.getRound("9 - 10");
         System.out.println("\t regular round: " + regular);
-        KnockdownRound knockout = (KnockdownRound) RoundFactory.getRound("8 - 10");
-        System.out.println("\t knockout round: " + knockout);
+        KnockdownRound knockdown = (KnockdownRound) RoundFactory.getRound("8 - 10");
+        System.out.println("\t knockdown round: " + knockdown);
 
  
         /**
@@ -206,6 +205,42 @@ public class Brunosbox
         
         System.out.println("\t FINAL SCORE: " + blueScoreCard.getRedBoxerFinalScore() + 
          " - " + blueScoreCard.getBlueBoxerFinalScore() + " FINAL SCORE");
+
+        /**
+         * Crea una clase llamada PointsDeducted
+         * que implemente la interfaz Round.
+         * 
+         * Crea un round del tipo "10 - 8 1" o "1 8 -10".
+         * Muestra la puntuación obtenida por
+         * cada boxeador.
+         * 
+         * En PointsDeducted la puntuacion se almacena
+         * como un número entero, no como un String.
+         */
+
+        PointsDeducted deducted = new PointsDeducted("10 - 8 ,1");
+        deducted.boxerRoundScore();
+        System.out.println("\n\t points deducted round\t" + deducted.getRedBoxerScore() +
+                              " - " + deducted.getBlueBoxerScore());
+        
+        deducted = new PointsDeducted("1, 8 - 10");
+        deducted.boxerRoundScore();
+        System.out.println("\n\t points deducted round\t" + deducted.getRedBoxerScore() +
+                                                    " - " + deducted.getBlueBoxerScore());  
+        
+         /**
+         * Extiende o modifica la clase RoundFactory para crear
+         * un objeto de tipo PointsDeducted
+         * si la puntuación indicada por el /la juez
+         * es "10 - 8 ,1" o "1, 8 - 10".
+         * 
+         * Si el metodo getRound() no construye el tipo indicado
+         * en el casting, las siguiente línea dará error
+         * en tiempo de ejecución.
+         */
+
+        PointsDeducted pointsDeducted = (PointsDeducted) RoundFactory.getRound("1, 8 - 10");
+        System.out.println("\t deducted round: " + pointsDeducted);
 
     }
 }

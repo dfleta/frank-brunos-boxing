@@ -79,7 +79,7 @@ public class ScoreCard {
                     redBoxerScoreTotal += round.getRedBoxerScore(),
                     roundNum++, 
                     blueBoxerScoreTotal += round.getBlueBoxerScore(),
-                    round.getBlueBoxerScore());
+                    round.getBlueBoxerScore()); 
         }
         return view;
     }

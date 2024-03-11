@@ -43,12 +43,13 @@ public class Brunosbox
              "9 - 10", 
              "9 - 10", 
              "1, 8 - 10", // referee point deduction
-             "10 - 8", // knockdown
+             "10 - 8",    // knockdown
              "10 - 8 ,1", // referee point deduction
              "10 - 9", 
              "9 - 10", 
              "10 - 9", 
-             "10 - 9"}
+             "10 - 8" // knockdown
+            }
 
         };
 
@@ -240,7 +241,7 @@ public class Brunosbox
          */
 
         PointsDeducted pointsDeducted = (PointsDeducted) RoundFactory.getRound("1, 8 - 10");
-        System.out.println("\t deducted round: " + pointsDeducted);
+        System.out.println("\n\t factory deducted round: " + pointsDeducted);
 
         /**
          * Carga en la tarjeta pink 

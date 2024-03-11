@@ -57,6 +57,8 @@ Las historias de usuario están enunciadas en el script principal `Brunosbox.jav
 Sigue el diagrama de clase UML proporcionado para construir la aplicación.
 Si añades algún componente, dibújalo sobre el diagrama.
 
+![Diagrama de clases UML](./doc/diagrama_clases_UML.png)
+
 ## Prepara el proyecto
 
  1. Crea un nuevo repo PRIVADO en tu cuenta en **Github** y compártelo con el usuario dfleta.

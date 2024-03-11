@@ -21,8 +21,7 @@ public class ScoreCard {
 
     public void setBCorner(String boxerName) {
         this.blueCorner = boxerName;
-    };
-
+    }
     public byte getNumRounds() {
         return (byte) this.rounds.size();
     }

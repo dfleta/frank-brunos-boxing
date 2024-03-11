@@ -26,9 +26,9 @@ Esta es una descripción general básica de cómo funciona:
 
 ### Resultado de la pelea.
 
-Si nadie ha ganado por _knockout_ después del número programado de asaltos (pueden ser 10 0 12 asaltos), las tarjetas de puntuación de los jueces asalto por asalto a lo largo de la pelea determinarán el ganador/a.
+Si nadie ha ganado por _knockout_ después del número programado de asaltos (pueden ser 10 o 12 asaltos), las tarjetas de puntuación de los jueces -asalto por asalto a lo largo de la pelea- determinarán el ganador/a.
 
-Cada uno de los tres jueces/zas tendrá un ganador general o pueden puntuar la pelea empatada.
+Cada uno de los tres jueces/zas tendrá un ganador/a general o pueden puntuar la pelea empatada.
 
 - Decisión unánime: los tres jueces tienen al mismo boxeador líder en sus tarjetas de puntuación.
 - Decisión dividida: dos jueces tienen al Boxeador A primero, mientras que un juez tiene al Boxeador B líder. Eso significa que el Boxeador A gana, dos tarjetas de puntuación a una.

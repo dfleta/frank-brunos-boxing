@@ -1,48 +1,93 @@
 
-# Frank Bruno's Boxing
-### Examen Programación Java 1º DAM
+Frank Bruno's Boxing
+====================  
+### Examen Programación Java 1º DAM - IES de Teis, Vigo.
 
-Refactoriza el código Java proporcionado sin cambiar su comportamiento, es decir, de modo que siga pasando los casos test proporcionados e intenta encontrar el defecto que produce que falle el último de los casos test. 
+![Frank Bruno's Boxing Video Game](./doc/FrankBrunosBoxing.jpg)
 
-La lógica de la aplicación es la que se explica en el epígrafe II.
 
-## I - Configuración del proyecto y refactorización.
+## En el ring
 
-### 1- Configura un proyecto Maven en tu máquina.
+### ¿Cómo se puntua un combate de boxeo?
 
-Recuerda establecer en el archivo de configuración del proyecto todas las opciones que hemos tratado en nuestras sesiones del módulo.
+![Boxing Score Card](./doc/canelo-golovkin-tarjetas-1.jpg)
 
-### 2- Pon el proyecto en seguimiento _git_ en tu sistema de archivos local.
+En un combate de boxeo, hay tres jueces/zas sentados al lado del ring.
 
-Excluye de seguimiento aquellos recursos que no procedan.
+Cada uno de ellos/as rellena una tarjeta de puntos. En este caso, blanca, azul y rosa.
 
-### 3- Crea un repo en github y añádeme como colaborador (usuario @dfleta).
+El moderno sistema de puntuación del boxeo se conoce como el "Sistema obligatorio de 10 puntos". 
 
-### 4- Configura este repo como el remoto de tu proyecto en local.
+Esta es una descripción general básica de cómo funciona:
 
-### 5- Realiza commits de manera continua siguiendo las directrices propuestas en _conventional commits_.
+- Los jueces califican cada asalto individualmente en una escala de 10 puntos. La mayoría de asaltos se califican `10-9`, con el boxeador/a que lo hizo mejor puntuando `10` y "ganando" el asalto, y el otro boxeador/a puntuando `9`.
+- Si un boxeador es derribado o lastimado lo suficiente como para que el árbitro cuente de pie, ese boxeador pierde un punto. Si un boxeador domina un asalto, controla y lanza mejores golpes en todo momento y también derriba a su oponente, el resultado final es un asalto `10-8`.
+- El /La árbitro puede indicar a los tres jueces/zas que resten un punto a un boxeador/a en cualquier asalto. Lo harán si un púgil ha hecho algo para romper las reglas, como una falta intencionada (golpe bajo, cabezazo, o el favorito de Mike Tyson, morder la oreja de un oponente).
 
-Sin un desarrollo incremental del proyecto con commits categorizados según la propuesta de _conventional commits_ no corrijo el examen.
+### Resultado de la pelea.
 
-### 6- Trabaja con al menos 2 ramas.
+Si nadie ha ganado por _knockout_ después del número programado de asaltos (pueden ser 10 0 12 asaltos), las tarjetas de puntuación de los jueces asalto por asalto a lo largo de la pelea determinarán el ganador/a.
 
-Utiliza la recomendación _gitflow_.
+Cada uno de los tres jueces/zas tendrá un ganador general o pueden puntuar la pelea empatada.
 
-### 7- Añade al proyecto las clases.
+- Decisión unánime: los tres jueces tienen al mismo boxeador líder en sus tarjetas de puntuación.
+- Decisión dividida: dos jueces tienen al Boxeador A primero, mientras que un juez tiene al Boxeador B líder. Eso significa que el Boxeador A gana, dos tarjetas de puntuación a una.
+Decisión de la mayoría: dos jueces tienen un peleador por delante, mientras que el tercer juez lo puntúa como empate. El boxeador ganador no obtuvo una decisión unánime, pero se llevó la mayoría de las puntuaciones.
+- Empate: si un juez tiene al boxeador A por delante, un juez tiene al boxeador B por delante y el tercero lo ha puntuado como empate, el resultado general es un empate (también conocido como "empate dividido"). Por supuesto, si los tres jueces terminaron empatados, también es un empate (un 'empate unánime').
+- Empate mayoritario: si dos de los tres jueces tienen una pelea igualada pero el tercer juez tenía al boxeador A por delante, una ventaja tan pequeña no es suficiente para que el boxeador A sea declarado ganador. En cambio, se declara un 'sorteo mayoritario'.
 
-`PinPals.java` -> Clase principal
-`ScoreCard.java` -> Lógica del aplicación
-`ScoreCardTest.java` -> Casos test
 
-#### 7.1 - Dependencia ASCII Table.
+## Salida de la aplicación
+
+Intenta que la salida del programa por CLI sea lo más parecida posible a las imágenes que se proporcionan. Cada una de ellas se corresponde con una de las historias de usuario que se detallan en los epígrafes siguientes.
+
+!["Historia de usuario"](./doc/Captura%20de%20pantalla%202024-03-11%20a%20las%2013.18.44.png "output ASCII CLI")
+!["Historia de usuario"](./doc/Captura%20de%20pantalla%202024-03-11%20a%20las%2013.02.38.png "output ASCII CLI")
+!["Historia de usuario"](./doc/Captura%20de%20pantalla%202024-03-11%20a%20las%2013.06.44.png "output ASCII CLI")
+!["Historia de usuario"](./doc/Captura%20de%20pantalla%202024-03-11%20a%20las%2013.07.51.png "output ASCII CLI")
+!["Historia de usuario"](./doc/Captura%20de%20pantalla%202024-03-11%20a%20las%2013.09.11.png "output ASCII CLI")
+!["Historia de usuario"](./doc/Captura%20de%20pantalla%202024-03-11%20a%20las%2013.10.55.png "output ASCII CLI")
+
+## Historias de usuario /casos de uso
+
+Las historias de usuario están enunciadas en el script principal `Brunosbox.java`.
+
+## Diagrama de clases UML / Arquitectura de la app.
+
+Sigue el diagrama de clase UML proporcionado para construir la aplicación.
+Si añades algún componente, dibújalo sobre el diagrama.
+
+## Prepara el proyecto
+
+ 1. Crea un nuevo repo PRIVADO en tu cuenta en **Github** y compártelo con el usuario dfleta.
+ 2. Crea un nuevo directorio en tu equipo y **clona el repositorio** de Github.
+ 3. Abre VSCode /Eclipse /Netbeans /IntelIJ y **establece como workspace** el directorio que has clonado.
+ 4. Crea un proyecto **Gradle** o **Maven**.
+ 5. Pon el proyecto en seguimiento en **Git** y configura `.gitignore`.
+ 6. Copia y pega la función principal `Brunosbox.java`. Utilízala como guía en el proceso TDD. **Modificar su código sólo en las líneas que se indiquen**. Sí puedes comentar aquellas partes que aun no hayas implementado.
+ 7. Completa las clases que aquí se indican **implementando los casos test que necesites**. Practica **TDD**.
+ 8. **Realiza `commits` como mínimo cada vez que termines una historia de usuario**. Sin commit periódicos, no corrijo el examen.
+
+
+ ## Cómo entregar el código
+
+ 1. Crea un repo PRIVADO en tu GitHub y compártelo con el usuario dfleta.
+ 2. **Realiza commits periódicamente** mientras avanzas en el desarrollo de la aplicación. Sin commit periódicos, no corrijo el examen.
+ 3. Realiza un `push` al repo remoto en GitHub **SOLO cuando hayas terminado el proyecto**.
+ 3. Si quieres, si vas a dormir mejor, desde Eclipse /Netbeans /IntelIJ exporta el proyecto a un fichero. En VSCode, comprime en un ZIP la carpeta del proyecto. Envíame el archivo ZIP por correo electrónico. **No se admiten ficheros .rar**.
+
+
+### Dependencia ASCII Table.
 
 Incluye la dependencia al paquete [ASCII Table](https://mvnrepository.com/artifact/com.github.freva/ascii-table):
 
 https://mvnrepository.com/artifact/com.github.freva/ascii-table
 
-### 8- Crea el fichero `jar` ejecutable.
+### Crea el fichero `jar` ejecutable.
 
-Configura el _plugin_ `jar` para generar un fichero `jar` **ejecutable** con la clase principal `PinPals.java`.
+#### Maven
+
+Configura el _plugin_ `jar` para generar un fichero `jar` **ejecutable** con la clase principal `Brunosbox.java`.
 
 Además, tendrás que incluir el siguiente _plugin_ en el archivo de configuración del proyecto.
 
@@ -53,7 +98,7 @@ Además, tendrás que incluir el siguiente _plugin_ en el archivo de configuraci
           <configuration>
             <archive>
               <manifest>
-                <mainClass>edu.gorillas.PinPals</mainClass>
+                <mainClass>edu.badpals.brunosbox.Brunosbox</mainClass>
               </manifest>
             </archive>
             <descriptorRefs>
@@ -76,46 +121,56 @@ Genera el fichero `jar` desde línea de comandos:
 
 `mvn clean compile assembly:single`
 
-Obtendrás un fichero llamado:
+Obtendrás en el directorio `target` un fichero llamado:
 
 `artifactId-1.0-SNAPSHOT-jar-with-dependencies.jar`
+
+
+#### Gradle
+
+Configura la _task_ `jar` para generar un fichero `jar` **ejecutable** con la clase principal `Brunosbox.java`.
+
+Además, tendrás que incluir la siguiente _tarea_ en el archivo de configuración del proyecto.
+
+```groovy
+// construir con: gradle fatJar
+// build/libs/brunosbox-1.0-SNAPSHOT.jar
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Main-Class': 'edu.badpals.brunosbox.Brunosbox'
+    }
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+    from { configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+```
+
+Genera el fichero `jar` desde línea de comandos:
+
+`gradle fatJar`
+
+Obtendrás en el directorio `build/libs` un fichero llamado:
+
+`brunosbox-1.0-SNAPSHOT.jar
+`
+
+#### Salida por consola
 
 Ejecuta este fichero `jar` desde la CLI (línea de comandos).
 
 Debes obtener en consola una salida como esta, la representación en ASCII Art de una tarjeta con la puntuación de una partida de bolos.
 
 ```
-Smokey, this is not Vietnam, this is bowling. There are rules. - The Dude
+- I see three of them out there.
+ - Hit the one in the middle.- Rocky Balboa
 
-+---------+---------+---------+---------+---------+---------+---------+---------+---------+----------+
-| Frame 1 | Frame 2 | Frame 3 | Frame 4 | Frame 5 | Frame 6 | Frame 7 | Frame 8 | Frame 9 | Frame 10 |
-+---------+---------+---------+---------+---------+---------+---------+---------+---------+----------+
-|   9 | - |   9 | - |   9 | - |   9 | - |   9 | - |   9 | - |   9 | - |   9 | - |   9 | - |    9 | - |
-+---------+---------+---------+---------+---------+---------+---------+---------+---------+----------+
++---------+---------+---------+-----------+---------+-----------+---------+---------+---------+----------+
+| Round 1 | Round 2 | Round 3 | Round 4   | Round 5 | Round 6   | Round 7 | Round 8 | Round 9 | Round 10 |
++---------+---------+---------+-----------+---------+-----------+---------+---------+---------+----------+
+|  9 - 10 |  9 - 10 |  9 - 10 |    9 - 10 |  10 - 9 |    10 - 9 |  10 - 9 |  9 - 10 |  10 - 9 |   9 - 10 |
++---------+---------+---------+-----------+---------+-----------+---------+---------+---------+----------+
+|  9 - 10 |  9 - 10 |  9 - 10 |    8 - 10 |  10 - 8 |    10 - 8 |  10 - 9 |  9 - 10 |  10 - 9 |   10 - 9 |
++---------+---------+---------+-----------+---------+-----------+---------+---------+---------+----------+
+|  9 - 10 |  9 - 10 |  9 - 10 | 1, 8 - 10 |  10 - 8 | 10 - 8 ,1 |  10 - 9 |  9 - 10 |  10 - 9 |   10 - 8 |
++---------+---------+---------+-----------+---------+-----------+---------+---------+---------+----------+
 ```
-
-### 9- Refactoriza los casos test para que compilen con Junit 5.
-
-Elimina del proyecto la dependencia a Junit 4 (en el caso en el que la hayas añadido anteriormente) y añade la dependencia a Junit 5.
-
-
-
-
-
-## II. En el ring
-
-![Bowling Score Card](./doc/scoreCard.png)
-
-La lógica de la aplicación es la siguiente.
-
-Dada una secuencia válida de tiradas para una partida de bolos, la aplicación devuelve la puntuación total del juego. 
-
-Este es un resumen de las reglas del juego:
-
-- Cada partida de bolos incluye diez turnos, o _frames_, para la persona lanzadora.
-- En cada _frame_ el jugador realiza hasta dos intentos para derribar todos los bolos o _pins_.
-- Si en dos intentos no logra derribar todos los bolos, su puntuación para ese _frame_ es el número total de bolos derribados en sus dos intentos.
-- Si en dos intentos los derriba todos, consigue un _spare_ y su puntuación en el _frame_ es `10` más el número de bolos derribados en su siguiente intento. Consulta [cómo se calcula la puntuación obtenida en un _spare_](https://es.wikipedia.org/wiki/Spare).
-- Si en su primer intento en el _frame_ derriba todos los bolos, consigue un _strike_. Su turno termina con ese primer lanzamiento (no lanza una segunda bola) y su puntuación en ese _frame_ es `10` más el total de los bolos derribados en sus dos siguientes lanzamientos. Consulta [cómo se computa la puntuación obtenida en un _strike_](https://es.wikipedia.org/wiki/Strike_(bowling)).
-- Si obtiene un _spare_ o un _strike_ en el último (décimo) _frame_, el jugador puede lanzar una o dos bolas extra, respectivamente. Estas bolas extra forman parte del mismo turno. Si los tiros extra derriban todos los bolos, no se obtienen más tiradas extra. Los tiros extra sólo se utilizan para calcular la puntuación del último _frame_.
-- La puntuación de la partida es la suma de las puntuaciones de todos los _frames_.

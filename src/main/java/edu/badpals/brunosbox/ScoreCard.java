@@ -32,10 +32,18 @@ public class ScoreCard {
 
     @Override
     public String toString() {
-        return "\n\t\t\t   " + this.color + 
-                "\n\t\t" + this.blueCorner + "\t" + this.redCorner +
-                "\n\t\t\t" + this.getNumRounds() + " rounds\n" +
-                this.viewRounds();
+        return new StringBuilder()
+                    .append("\n\t\t\t   ")
+                    .append(this.color)
+                    .append("\n\t\t")
+                    .append(this.blueCorner)
+                    .append("\t")
+                    .append(this.redCorner)
+                    .append("\n\t\t\t")
+                    .append(this.getNumRounds())
+                    .append(getNumRounds())
+                    .append(" rounds\n")
+                    .append(this.viewRounds()).toString();
     }
 
     public void loadJudgeScoreCard(String[] judgeScoreCard) {

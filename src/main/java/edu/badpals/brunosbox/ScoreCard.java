@@ -64,8 +64,9 @@ public class ScoreCard {
 
     private String viewRounds() {
         
-        String view = "\t Round \t Score \t Round \t Score \t Round\n" +
-                      "\t Score \t Total \t       \t Total \t Score";
+        StringBuilder roundsView = new StringBuilder();
+        roundsView.append("\tRound \t Score \t Round \t Score \t Round\n")
+                  .append("\tScore \t Total \t       \t Total \t Score");
         
         byte roundNum = 1;
         
@@ -73,13 +74,17 @@ public class ScoreCard {
         byte blueBoxerScoreTotal = 0;
 
         for(Round round : this.rounds) {
-            view += String.format("\n\t %d \t %d \t %d \t %d \t %d", 
-                    round.getRedBoxerScore(),
-                    redBoxerScoreTotal += round.getRedBoxerScore(),
-                    roundNum++, 
-                    blueBoxerScoreTotal += round.getBlueBoxerScore(),
-                    round.getBlueBoxerScore()); 
+            roundsView.append("\n\t")
+                .append(round.getRedBoxerScore())
+                .append("\t\s")
+                .append(redBoxerScoreTotal += round.getRedBoxerScore())
+                .append("\t\s\s")
+                .append(roundNum++)
+                .append("\t\s")
+                .append(blueBoxerScoreTotal += round.getBlueBoxerScore())
+                .append("\t\s")
+                .append(round.getBlueBoxerScore());       
         }
-        return view;
+        return roundsView.toString();
     }
 }

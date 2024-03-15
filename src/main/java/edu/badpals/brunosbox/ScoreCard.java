@@ -73,11 +73,13 @@ public class ScoreCard {
 
     public int getBlueBoxerFinalScore() {
         if (this.blueBoxerFinalScore == 0) {
-            this.getRounds()
-                .stream()
-                .map(Round::getBlueBoxerScore)
-                .map(Byte::intValue)
-                .reduce(0, Integer::sum);
+            this.blueBoxerFinalScore =
+                this.getRounds()
+                    .stream()
+                    .map(Round::getBlueBoxerScore)
+                    .map(Byte::intValue)
+                    .reduce(0, Integer::sum)
+                    .byteValue();
         }
         return this.blueBoxerFinalScore;
     }

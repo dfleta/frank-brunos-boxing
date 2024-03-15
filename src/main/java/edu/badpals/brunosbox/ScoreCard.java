@@ -9,6 +9,9 @@ public class ScoreCard {
     private String redCorner = "";
     private String blueCorner = "";
     private String[] judgeScoreCard;
+    private Byte redBoxerFinalScore = 0;
+    private Byte blueBoxerFinalScore = 0;
+
     private List<Round> rounds = new ArrayList<Round>();
     
     public ScoreCard(String color) {
@@ -54,20 +57,28 @@ public class ScoreCard {
         }
     }
 
-    public int getRedBoxerFinalScore() {
-        return this.getRounds()
+    public byte getRedBoxerFinalScore() {
+        if (this.redBoxerFinalScore == 0) {
+            this.redBoxerFinalScore =
+                this.getRounds()
                     .stream()
                     .map(Round::getRedBoxerScore)
                     .map(Byte::intValue)
-                    .reduce(0, Integer::sum);
+                    .reduce(0, Integer::sum)
+                    .byteValue();
+        }
+        return this.redBoxerFinalScore;
     }
 
     public int getBlueBoxerFinalScore() {
-        return this.getRounds()
-                    .stream()
-                    .map(Round::getBlueBoxerScore)
-                    .map(Byte::intValue)
-                    .reduce(0, Integer::sum);
+        if (this.blueBoxerFinalScore == 0) {
+            this.getRounds()
+                .stream()
+                .map(Round::getBlueBoxerScore)
+                .map(Byte::intValue)
+                .reduce(0, Integer::sum);
+        }
+        return this.blueBoxerFinalScore;
     }
 
     private String viewRounds() {

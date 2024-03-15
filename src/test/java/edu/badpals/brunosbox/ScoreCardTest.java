@@ -27,7 +27,7 @@ public class ScoreCardTest {
     }
     
     @Test
-    public void loadJugdeScoreCardTest() {
+    public void loadJudgeScoreCardTest() {
 
         card.loadJudgeScoreCard(judgeScoreCard);
         assertEquals(10, card.getNumRounds());
@@ -36,7 +36,9 @@ public class ScoreCardTest {
     } 
 
     @Test
-    public void getRedBoxerFinalScoreTest() {
+    public void getBoxerFinalScoreTest() {
+        assertEquals(0, card.getRedBoxerFinalScore());
+        assertEquals(0, card.getBlueBoxerFinalScore());
         card.loadJudgeScoreCard(judgeScoreCard);
         assertEquals(94, card.getRedBoxerFinalScore());
         assertEquals(96, card.getBlueBoxerFinalScore());

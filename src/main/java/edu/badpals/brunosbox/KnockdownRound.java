@@ -12,11 +12,20 @@ class KnockdownRound implements Round {
         this.boxerRoundScore();
     }
 
+    String getRoundScore() {
+        return this.roundScore;
+    }
+
     @Override
     public void boxerRoundScore() {
         
-        String redBoxerRoundScore = roundScore.substring(0, this.roundScore.indexOf("-"));
-        String blueBoxerRoundScore = roundScore.substring(this.roundScore.indexOf("-") + 1, this.roundScore.length());
+        String redBoxerRoundScore = roundScore
+                                    .substring(0, 
+                                               this.roundScore.indexOf("-"));
+        
+        String blueBoxerRoundScore = roundScore
+                                    .substring(this.roundScore.indexOf("-") + 1, 
+                                               this.roundScore.length());
 
         this.redBoxerScore = Byte.parseByte(redBoxerRoundScore.toString());
         this.blueBoxerScore = Byte.parseByte(blueBoxerRoundScore.toString());
@@ -35,8 +44,9 @@ class KnockdownRound implements Round {
     @Override
     public String toString() {
         return new StringBuilder()
-                    .append(this.redBoxerScore)
+                    .append(this.getRedBoxerScore())
                     .append(" - ")
-                    .append(this.blueBoxerScore).toString();    }
+                    .append(this.getBlueBoxerScore()).toString();    
+    }
 
 }

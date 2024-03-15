@@ -11,11 +11,19 @@ class PointsDeducted implements Round {
         this.boxerRoundScore();
     }
 
+    String getRoundScore() {
+        return this.roundScore;
+    }
+
     @Override
     public void boxerRoundScore() {
         
-        String redBoxerRoundScore = this.roundScore.substring(0, this.roundScore.indexOf("-"));
-        String blueBoxerRoundScore = this.roundScore.substring(this.roundScore.indexOf("-") + 1, this.roundScore.length());
+        String redBoxerRoundScore = this.roundScore
+                                            .substring(0, 
+                                                       this.roundScore.indexOf("-"));
+        String blueBoxerRoundScore = this.roundScore
+                                            .substring(this.roundScore.indexOf("-") + 1, 
+                                                       this.roundScore.length());
 
         if (redBoxerRoundScore.indexOf(',') == -1) {
             this.redBoxerScore = Byte.parseByte(redBoxerRoundScore.toString());

@@ -19,8 +19,13 @@ class RegularRound implements Round {
     @Override
     public void boxerRoundScore() {
         
-        String redBoxerRoundScore = roundScore.substring(0, this.roundScore.indexOf("-"));
-        String blueBoxerRoundScore = roundScore.substring(this.roundScore.indexOf("-") + 1, this.roundScore.length());
+        String redBoxerRoundScore = getRoundScore()
+                                        .substring(0, 
+                                                this.roundScore.indexOf("-"));
+                                                
+        String blueBoxerRoundScore = getRoundScore()
+                                        .substring(this.roundScore.indexOf("-") + 1, 
+                                                   this.roundScore.length());
 
         this.redBoxerScore = Byte.parseByte(redBoxerRoundScore.toString());
         this.blueBoxerScore = Byte.parseByte(blueBoxerRoundScore.toString());

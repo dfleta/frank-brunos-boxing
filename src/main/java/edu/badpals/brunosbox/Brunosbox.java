@@ -141,7 +141,6 @@ public class Brunosbox
          */
 
         KnockdownRound knockdownRound = new KnockdownRound("10 - 8");
-        knockdownRound.boxerRoundScore();
         System.out.println("\n\t knockdown round: " + knockdownRound.getRedBoxerScore() +
                              " - " + knockdownRound.getBlueBoxerScore());
                         
@@ -211,12 +210,10 @@ public class Brunosbox
          */
 
         PointsDeducted deducted = new PointsDeducted("10 - 8 ,1");
-        deducted.boxerRoundScore();
         System.out.println("\n\t points deducted round:\t" + deducted.getRedBoxerScore() +
                               " - " + deducted.getBlueBoxerScore());
         
         deducted = new PointsDeducted("1, 8 - 10");
-        deducted.boxerRoundScore();
         System.out.println("\n\t points deducted round:\t" + deducted.getRedBoxerScore() +
                                                     " - " + deducted.getBlueBoxerScore());  
         

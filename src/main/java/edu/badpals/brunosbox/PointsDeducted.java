@@ -15,8 +15,7 @@ class PointsDeducted implements Round {
         return this.roundScore;
     }
 
-    @Override
-    public void boxerRoundScore() {
+    void boxerRoundScore() {
         
         String redBoxerRoundScore = this.roundScore
                                             .substring(0, 

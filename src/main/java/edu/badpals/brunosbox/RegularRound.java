@@ -16,8 +16,7 @@ class RegularRound implements Round {
         return this.roundScore;
     }
 
-    @Override
-    public void boxerRoundScore() {
+    void boxerRoundScore() {
         
         String redBoxerRoundScore = getRoundScore()
                                         .substring(0, 

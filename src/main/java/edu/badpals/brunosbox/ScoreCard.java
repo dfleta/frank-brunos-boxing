@@ -45,9 +45,14 @@ public class ScoreCard {
                     .append(this.redCorner)
                     .append("\n\t\t\t")
                     .append(this.getNumRounds())
-                    .append(getNumRounds())
                     .append(" rounds\n")
-                    .append(this.viewRounds()).toString();
+                    .append(this.viewRounds())
+                    .append("\n\t FINAL SCORE: ")
+                    .append(this.getRedBoxerFinalScore())
+                    .append(" - ")
+                    .append(this.getBlueBoxerFinalScore())
+                    .append(" FINAL SCORE")
+                    .toString();
     }
 
     public void loadJudgeScoreCard(String[] judgeScoreCard) {

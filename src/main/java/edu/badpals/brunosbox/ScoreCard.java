@@ -2,6 +2,7 @@ package edu.badpals.brunosbox;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class ScoreCard {
 
@@ -30,7 +31,7 @@ public class ScoreCard {
     }
 
     public List<Round> getRounds() {
-        return this.rounds;
+        return Collections.unmodifiableList(this.rounds);
     }
 
     @Override

@@ -1,7 +1,7 @@
 package edu.badpals.brunosbox;
 
-public interface Round {
+interface Round {  // visibilidad paquete
 
-    public byte getRedBoxerScore();
-    public byte getBlueBoxerScore();    
+    byte getRedBoxerScore();  // public por defecto
+    byte getBlueBoxerScore();    
 }

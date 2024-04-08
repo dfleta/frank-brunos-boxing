@@ -1,6 +1,7 @@
 package edu.badpals.brunosbox;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -23,6 +24,10 @@ public class ScoreCard {
         this.redCorner = boxerName;
     }
 
+    private void setJudgeScoreCard(String[] scoreCard) {
+        this.judgeScoreCard = scoreCard;
+    }
+
     public void setBCorner(String boxerName) {
         this.blueCorner = boxerName;
     }
@@ -32,6 +37,10 @@ public class ScoreCard {
 
     public List<Round> getRounds() {
         return Collections.unmodifiableList(this.rounds);
+    }
+
+    private void addRound(Round round) {
+        this.rounds.add(round);
     }
 
     @Override
@@ -56,10 +65,12 @@ public class ScoreCard {
     }
 
     public void loadJudgeScoreCard(String[] judgeScoreCard) {
-        this.judgeScoreCard = judgeScoreCard;
+        this.setJudgeScoreCard(judgeScoreCard);
 
+        Optional<Round> round = Optional.empty();
         for(String roundScore : this.judgeScoreCard) {
-            this.rounds.add(RoundFactory.getRound(roundScore));
+            round = Optional.ofNullable(RoundFactory.getRound(roundScore));
+            round.ifPresent(this::addRound);
         }
     }
 

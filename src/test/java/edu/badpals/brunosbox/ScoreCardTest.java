@@ -42,7 +42,6 @@ public class ScoreCardTest {
 
         card.loadJudgeScoreCard(whiteScoreCard);
         assertEquals(10, card.getNumRounds());
-        assertTrue(card.getRounds().stream().allMatch(a -> a instanceof Round));
         assertTrue(card.getRounds().stream().allMatch(a -> a instanceof RegularRound));
     } 
 
@@ -57,7 +56,6 @@ public class ScoreCardTest {
 
         card.loadJudgeScoreCard(pinkScoreCard);
         assertEquals(10, card.getNumRounds());
-        assertTrue(card.getRounds().stream().allMatch(a -> a instanceof Round));
         assertEquals(2, card.getRounds().stream().filter(a -> a instanceof PointsDeducted).count());
     }
 
@@ -67,7 +65,6 @@ public class ScoreCardTest {
 
         card.loadJudgeScoreCard(pinkScoreCard);
         assertEquals(10, card.getNumRounds());
-        assertTrue(card.getRounds().stream().allMatch(a -> a instanceof Round));
         assertEquals(2, card.getRounds().stream().filter(a -> a instanceof KnockdownRound).count());
     }
 

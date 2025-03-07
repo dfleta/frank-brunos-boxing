@@ -42,10 +42,7 @@ class RegularRound implements Round {
 
     @Override
     public String toString() {
-        return new StringBuilder()
-                    .append(this.redBoxerScore)
-                    .append(" - ")
-                    .append(this.blueBoxerScore).toString();
+        return this.getRedBoxerScore() + " - " + this.getBlueBoxerScore();
     }
 
 }

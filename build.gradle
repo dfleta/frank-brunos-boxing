@@ -5,17 +5,20 @@
 plugins {
     id 'application'
     id 'java'
+    id 'net.ltgt.errorprone' version "4.0.1"
 }
 
 
 repositories {
     mavenCentral()
+    gradlePluginPortal()
 }
 
 dependencies {
     implementation group: 'com.github.freva', name: 'ascii-table', version: '1.8.0'
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.10.2'
-    implementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.10.2'
+    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.10.2'
+    errorprone 'com.google.errorprone:error_prone_core:2.28.0'
 }
 
 application {
@@ -24,7 +27,11 @@ application {
 
 jar {
     manifest {
-        attributes 'Main-Class' : 'edu.badpals.brunosbox.Brunosbox'
+        attributes 'Main-Class' : 'edu.badpals.brunosbox.Brunosbox',
+                   'Package-Title' : 'Brunosbox',
+                   'Package-Version': '1.0',
+                   'Package-Vendor' : 'davidg@edu.xunta.gal',
+                   'Specification-Title' : 'Examen programacion'
     }
 }
 
@@ -32,7 +39,11 @@ jar {
 // java -jar build/libs/brunosbox-1.0-SNAPSHOT.jar
 task fatJar(type: Jar) {
     manifest {
-        attributes 'Main-Class': 'edu.badpals.brunosbox.Brunosbox'
+        attributes 'Main-Class' : 'edu.badpals.brunosbox.Brunosbox',
+                   'Package-Title' : 'Brunosbox',
+                   'Package-Version': '1.0',
+                   'Package-Vendor' : 'davidg@edu.xunta.gal',
+                   'Specification-Title' : 'Examen programacion'
     }
     duplicatesStrategy = DuplicatesStrategy.INCLUDE
     from { configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) } }

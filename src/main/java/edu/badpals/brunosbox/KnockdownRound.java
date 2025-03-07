@@ -42,10 +42,7 @@ class KnockdownRound implements Round {
 
     @Override
     public String toString() {
-        return new StringBuilder()
-                    .append(this.getRedBoxerScore())
-                    .append(" - ")
-                    .append(this.getBlueBoxerScore()).toString();    
+        return this.getRedBoxerScore() + " - " + this.getBlueBoxerScore();    
     }
 
 }

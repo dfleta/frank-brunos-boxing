@@ -9,25 +9,17 @@ class RegularRound implements Round {
 
     RegularRound(String roundScore) {
         this.roundScore = roundScore.replaceAll("\\s", "");
-        this.boxerRoundScore();
+        this.parseBoxersRoundScore();
     }
 
     String getRoundScore() {
         return this.roundScore;
     }
 
-    void boxerRoundScore() {
-        
-        String redBoxerRoundScore = getRoundScore()
-                                        .substring(0, 
-                                                this.roundScore.indexOf("-"));
-                                                
-        String blueBoxerRoundScore = getRoundScore()
-                                        .substring(this.roundScore.indexOf("-") + 1, 
-                                                   this.roundScore.length());
-
-        this.redBoxerScore = Byte.parseByte(redBoxerRoundScore.toString());
-        this.blueBoxerScore = Byte.parseByte(blueBoxerRoundScore.toString());
+    private void parseBoxersRoundScore() {
+        String[] scores = getRoundScore().split("-");
+        this.redBoxerScore = Byte.parseByte(scores[0]);
+        this.blueBoxerScore = Byte.parseByte(scores[1]);
     }
 
     @Override

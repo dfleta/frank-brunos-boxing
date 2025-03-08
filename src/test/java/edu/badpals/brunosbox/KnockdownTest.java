@@ -16,7 +16,6 @@ public class KnockdownTest {
     public void roundScoreToIntTest() {
         KnockdownRound round = new KnockdownRound("10 - 8");
         assertEquals(round.getRoundScore(), "10-8");
-        round.boxerRoundScore();
         assertEquals(10, round.getRedBoxerScore());
         assertEquals(8, round.getBlueBoxerScore());
     }

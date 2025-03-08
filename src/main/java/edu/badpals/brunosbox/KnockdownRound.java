@@ -9,25 +9,17 @@ class KnockdownRound implements Round {
 
     KnockdownRound(String roundScore) {
         this.roundScore = roundScore.replaceAll("\\s", "");
-        this.boxerRoundScore();
+        this.parseBoxerRoundScore();
     }
 
     String getRoundScore() {
         return this.roundScore;
     }
 
-    void boxerRoundScore() {
-        
-        String redBoxerRoundScore = roundScore
-                                    .substring(0, 
-                                               this.roundScore.indexOf("-"));
-        
-        String blueBoxerRoundScore = roundScore
-                                    .substring(this.roundScore.indexOf("-") + 1, 
-                                               this.roundScore.length());
-
-        this.redBoxerScore = Byte.parseByte(redBoxerRoundScore.toString());
-        this.blueBoxerScore = Byte.parseByte(blueBoxerRoundScore.toString());
+    private void parseBoxerRoundScore() {
+        String[] scores = getRoundScore().split("-", 2);
+        this.redBoxerScore = Byte.parseByte(scores[0]);
+        this.blueBoxerScore = Byte.parseByte(scores[1]);
     }
 
     @Override

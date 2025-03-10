@@ -8,27 +8,24 @@ class PointsDeducted implements Round {
 
     PointsDeducted(String roundScore) {
         this.roundScore = roundScore.replaceAll("\\s", "");
-        this.boxerRoundScore();
+        this.parseBoxerRoundScore();
     }
 
     String getRoundScore() {
         return this.roundScore;
     }
 
-    void boxerRoundScore() {
+    private void parseBoxerRoundScore() {
         
-        String redBoxerRoundScore = this.roundScore
-                                            .substring(0, 
-                                                       this.roundScore.indexOf("-"));
-        String blueBoxerRoundScore = this.roundScore
-                                            .substring(this.roundScore.indexOf("-") + 1, 
-                                                       this.roundScore.length());
+        String[] scores = getRoundScore().split("-", 2);
+        String redBoxerRoundScore = scores[0];
+        String blueBoxerRoundScore = scores[1];
 
         if (redBoxerRoundScore.indexOf(',') == -1) {
-            this.redBoxerScore = Byte.parseByte(redBoxerRoundScore.toString());
+            this.redBoxerScore = Byte.parseByte(redBoxerRoundScore);
             this.blueBoxerScore = this.parseComaBlue(blueBoxerRoundScore);
         } else {
-            this.blueBoxerScore = Byte.parseByte(blueBoxerRoundScore.toString());
+            this.blueBoxerScore = Byte.parseByte(blueBoxerRoundScore);
             this.redBoxerScore = this.parseComaRed(redBoxerRoundScore);
         }
     }

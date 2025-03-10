@@ -128,25 +128,22 @@ public class Brunosbox
         System.out.println(whiteScoreCard);
 
         /*
-         * Crea una clase llamada KnockdownRound
-         * que implemente la interfaz Round.
-         * 
          * Crea un round del tipo "10 - 8" o "8 -10".
          * Muestra la puntuación obtenida por
          * cada boxeador.
          * 
-         * En KnockdownRound la puntuacion se almacena
+         * La puntuacion se almacena
          * como un número entero, no como un String.
          */
 
-        KnockdownRound knockdownRound = new KnockdownRound("10 - 8");
+        RegularRound knockdownRound = new RegularRound("10 - 8");
         System.out.println("\n\t knockdown round: " + knockdownRound.getRedBoxerScore() +
                              " - " + knockdownRound.getBlueBoxerScore());
                         
         /*
          * Crea una clase RoundFactory que crea
-         * un objeto de tipo RegularRound o KnockdownRound
-         * segun si la puntuación indicada por el /la juez
+         * un objeto de tipo RegularRound
+         * si la puntuación indicada por el /la juez
          * es "10 - 9" o "10 - 8".
          * 
          * Si el metodo getRound() no construye el tipo indicado
@@ -156,7 +153,7 @@ public class Brunosbox
 
         RegularRound regular = (RegularRound) RoundFactory.getRound("9 - 10");
         System.out.println("\t regular round: " + regular);
-        KnockdownRound knockdown = (KnockdownRound) RoundFactory.getRound("8 - 10");
+        RegularRound knockdown = (RegularRound) RoundFactory.getRound("8 - 10");
         System.out.println("\t knockdown round: " + knockdown);
 
  
@@ -165,7 +162,7 @@ public class Brunosbox
          * los puntos de todos los rounds
          * de la segunda tarjeta del array data.
          * 
-         * Cada round es un objeto del tipo RegularRound o KnockdownRound.
+         * Cada round es un objeto del tipo RegularRound.
          * La tarjeta azul es una colección de objetos
          * de tipo Round.
          * 

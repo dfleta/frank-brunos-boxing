@@ -13,7 +13,7 @@ public class RoundFactory {
         } 
         else if (roundScore.equalsIgnoreCase("10 - 8") 
                 || roundScore.equalsIgnoreCase("8 - 10")) {
-            return new KnockdownRound(roundScore);
+            return new RegularRound(roundScore);
         } 
         else if (roundScore.equalsIgnoreCase("1, 8 - 10") 
                 || roundScore.equalsIgnoreCase("10 - 8 ,1")) {

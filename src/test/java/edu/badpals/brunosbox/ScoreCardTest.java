@@ -21,15 +21,15 @@ public class ScoreCardTest {
                                         "10 - 9", 
                                         "9 - 10"};
 
-    private String[] pinkScoreCard = {"9 - 10", 
-                                        "9 - 10", 
-                                        "9 - 10", 
+    private String[] pinkScoreCard = {"8 - 10", 
+                                        "8 - 10", 
+                                        "8 - 10", 
                                         "1, 8 - 10", // referee point deduction
                                         "10 - 8",    // knockdown
                                         "10 - 8 ,1", // referee point deduction
-                                        "10 - 9", 
-                                        "9 - 10", 
-                                        "10 - 9", 
+                                        "10 - 8", 
+                                        "8 - 10", 
+                                        "10 - 8", 
                                         "10 - 8"}; // knockdown
 
     @BeforeEach
@@ -65,7 +65,7 @@ public class ScoreCardTest {
 
         card.loadJudgeScoreCard(pinkScoreCard);
         assertEquals(10, card.getNumRounds());
-        assertEquals(2, card.getRounds().stream().filter(a -> a instanceof KnockdownRound).count());
+        assertEquals(8, card.getRounds().stream().filter(a -> a instanceof RegularRound).count());
     }
 
     @Test

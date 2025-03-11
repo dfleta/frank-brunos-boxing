@@ -197,7 +197,7 @@ public class Brunosbox
          * Crea una clase llamada PointsDeducted
          * que implemente la interfaz Round.
          * 
-         * Crea un round del tipo "10 - 8 1" o "1 8 -10".
+         * Crea un round del tipo "10 - 8, 1" o "1, 8 -10".
          * Muestra la puntuación obtenida por
          * cada boxeador.
          * 
@@ -205,13 +205,13 @@ public class Brunosbox
          * como un número entero, no como un String.
          */
 
-        PointsDeducted deducted = new PointsDeducted("10 - 8 ,1");
-        System.out.println("\n\t points deducted round:\t" + deducted.getRedBoxerScore() +
-                              " - " + deducted.getBlueBoxerScore());
+        PointsDeductedBlue deductedB = new PointsDeductedBlue("10 - 8 ,1");
+        System.out.println("\n\t points deducted round:\t" + deductedB.getRedBoxerScore() +
+                              " - " + deductedB.getBlueBoxerScore());
         
-        deducted = new PointsDeducted("1, 8 - 10");
-        System.out.println("\n\t points deducted round:\t" + deducted.getRedBoxerScore() +
-                                                    " - " + deducted.getBlueBoxerScore());  
+        PointsDeductedRed deductedR = new PointsDeductedRed("1, 8 - 10");
+        System.out.println("\n\t points deducted round:\t" + deductedR.getRedBoxerScore() +
+                                                    " - " + deductedR.getBlueBoxerScore());  
         
         /*
          * Extiende o modifica la clase RoundFactory para crear
@@ -224,7 +224,7 @@ public class Brunosbox
          * en tiempo de ejecución.
          */
 
-        PointsDeducted pointsDeducted = (PointsDeducted) RoundFactory.getRound("1, 8 - 10");
+        PointsDeductedRed pointsDeducted = (PointsDeductedRed) RoundFactory.getRound("1, 8 - 10");
         System.out.println("\n\t factory deducted round: " + pointsDeducted);
 
         /*

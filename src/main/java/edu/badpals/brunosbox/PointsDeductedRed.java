@@ -1,12 +1,12 @@
 package edu.badpals.brunosbox;
 
-class PointsDeducted implements Round {
+class PointsDeductedRed implements Round {
 
     private final String roundScore;
     private byte redBoxerScore;
     private byte blueBoxerScore;
 
-    PointsDeducted(String roundScore) {
+    PointsDeductedRed(String roundScore) {
         this.roundScore = roundScore.replaceAll("\\s", "");
         this.parseBoxerRoundScore();
     }
@@ -21,18 +21,8 @@ class PointsDeducted implements Round {
         String redBoxerRoundScore = scores[0];
         String blueBoxerRoundScore = scores[1];
 
-        if (redBoxerRoundScore.indexOf(',') == -1) {
-            this.redBoxerScore = Byte.parseByte(redBoxerRoundScore);
-            this.blueBoxerScore = this.parseComaBlue(blueBoxerRoundScore);
-        } else {
-            this.blueBoxerScore = Byte.parseByte(blueBoxerRoundScore);
-            this.redBoxerScore = this.parseComaRed(redBoxerRoundScore);
-        }
-    }
-
-    private Byte parseComaBlue(String score) {
-        // score = "8,1"
-        return Byte.parseByte(score.substring(0, score.indexOf(',')));
+        this.redBoxerScore = this.parseComaRed(redBoxerRoundScore);
+        this.blueBoxerScore = Byte.parseByte(blueBoxerRoundScore);
     }
 
     private Byte parseComaRed(String score) {
@@ -56,3 +46,4 @@ class PointsDeducted implements Round {
     }
     
 }
+

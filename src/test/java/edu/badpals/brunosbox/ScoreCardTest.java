@@ -56,7 +56,9 @@ public class ScoreCardTest {
 
         card.loadJudgeScoreCard(pinkScoreCard);
         assertEquals(10, card.getNumRounds());
-        assertEquals(2, card.getRounds().stream().filter(a -> a instanceof PointsDeducted).count());
+        assertEquals(1, card.getRounds().stream().filter(a -> a instanceof PointsDeductedBlue).count());
+        assertEquals(1, card.getRounds().stream().filter(a -> a instanceof PointsDeductedRed).count());
+
     }
 
 

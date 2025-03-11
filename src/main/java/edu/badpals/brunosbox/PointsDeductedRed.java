@@ -6,6 +6,7 @@ class PointsDeductedRed extends PointsDeducted {
         super(roundScore);
     }
 
+    @Override
     void parseBoxerRoundScore() {
         
         String[] scores = getRoundScore().split("-", 2);

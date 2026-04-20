@@ -1,10 +1,9 @@
 
-Frank Bruno's Boxing
-====================  
-### Examen Programación Java 1º DAM - IES de Teis, Vigo.
+# Frank Bruno's Boxing
+
+## Examen Programación Java 1º DAM - IES de Teis, Vigo
 
 ![Frank Bruno's Boxing Video Game](./doc/FrankBrunosBoxing.jpg)
-
 
 ## En el ring
 
@@ -16,7 +15,7 @@ En un combate de boxeo, hay tres jueces/zas sentados al lado del ring.
 
 Cada uno de ellos/as rellena una tarjeta de puntos. En este caso: blanca, azul y rosa.
 
-El actual sistema de puntuación del boxeo se conoce como "Sistema obligatorio de 10 puntos". 
+El actual sistema de puntuación del boxeo se conoce como "Sistema obligatorio de 10 puntos".
 
 Esta es una descripción general básica de cómo funciona:
 
@@ -24,7 +23,7 @@ Esta es una descripción general básica de cómo funciona:
 - Si un boxeador es derribado o lastimado lo suficiente como para que el árbitro cuente de pie, ese boxeador pierde un punto. Si un púgil domina un asalto, controla y lanza mejores golpes en todo momento y también derriba a su oponente, el resultado final del asalto es `10-8`.
 - El /la árbitro puede indicar a los tres jueces/zas que resten un punto a un púgil en cualquier asalto. Lo harán si éste ha hecho algo para romper las reglas, como una falta intencionada (golpe bajo, cabezazo, o el favorito de Mike Tyson, morder la oreja de un oponente).
 
-### Resultado de la pelea.
+### Resultado de la pelea
 
 Si nadie ha ganado por _knockout_ después del número programado de asaltos (pueden ser 10 o 12 asaltos), las tarjetas de puntuación de los jueces -asalto por asalto a lo largo de la pelea- determinarán el ganador/a.
 
@@ -35,7 +34,6 @@ Cada uno de los tres jueces/zas tendrá un ganador/a general o pueden puntuar la
 - Decisión de la mayoría: dos jueces tienen un peleador por delante, mientras que el tercer juez lo puntúa como empate. El boxeador ganador no obtuvo una decisión unánime, pero se llevó la mayoría de las puntuaciones.
 - Empate: si un juez tiene al boxeador A por delante, un juez tiene al boxeador B por delante y el tercero lo ha puntuado como empate, el resultado general es un empate (también conocido como "empate dividido"). Por supuesto, si los tres jueces terminaron empatados, también es un empate (un 'empate unánime').
 - Empate mayoritario: si dos de los tres jueces tienen una pelea igualada pero el tercer juez tenía al boxeador A por delante, una ventaja tan pequeña no es suficiente para que el boxeador A sea declarado ganador. En cambio, se declara un 'sorteo mayoritario'.
-
 
 ## Salida de la aplicación
 
@@ -52,7 +50,7 @@ Intenta que la salida del programa por CLI sea lo más parecida posible a las im
 
 Las historias de usuario están enunciadas en el script principal `Brunosbox.java`.
 
-## Diagrama de clases UML / Arquitectura de la app.
+## Diagrama de clases UML / Arquitectura de la app
 
 Sigue el diagrama de clase UML proporcionado para construir la aplicación.
 Si añades algún componente, dibújalo sobre el diagrama.
@@ -70,22 +68,20 @@ Si añades algún componente, dibújalo sobre el diagrama.
  7. Completa las clases que aquí se indican **implementando los casos test que necesites**. Practica **TDD**.
  8. **Realiza `commits` como mínimo cada vez que termines una historia de usuario**. Sin commit periódicos, no corrijo el examen.
 
-
- ## Cómo entregar el código
+## Cómo entregar el código
 
  1. Crea un repo PRIVADO en tu GitHub y compártelo con el usuario dfleta.
  2. **Realiza commits periódicamente** mientras avanzas en el desarrollo de la aplicación. Sin commit periódicos, no corrijo el examen.
  3. Realiza un `push` al repo remoto en GitHub **SOLO cuando hayas terminado el proyecto**.
- 3. Si quieres, si vas a dormir mejor, desde Eclipse /Netbeans /IntelIJ exporta el proyecto a un fichero. En VSCode, comprime en un ZIP la carpeta del proyecto. Envíame el archivo ZIP por correo electrónico. **No se admiten ficheros .rar**.
+ 4. Si quieres, si vas a dormir mejor, desde Eclipse /Netbeans /IntelIJ exporta el proyecto a un fichero. En VSCode, comprime en un ZIP la carpeta del proyecto. Envíame el archivo ZIP por correo electrónico. **No se admiten ficheros .rar**.
 
-
-### Dependencia ASCII Table.
+### Dependencia ASCII Table
 
 Incluye la dependencia al paquete [ASCII Table](https://mvnrepository.com/artifact/com.github.freva/ascii-table):
 
-https://mvnrepository.com/artifact/com.github.freva/ascii-table
+<https://mvnrepository.com/artifact/com.github.freva/ascii-table>
 
-### Crea el fichero `jar` ejecutable.
+### Crea el fichero `jar` ejecutable
 
 #### Maven
 
@@ -127,7 +123,6 @@ Obtendrás en el directorio `target` un fichero llamado:
 
 `artifactId-1.0-SNAPSHOT-jar-with-dependencies.jar`
 
-
 #### Gradle
 
 Configura la _task_ `jar` para generar un fichero `jar` **ejecutable** con la clase principal `Brunosbox.java`.
@@ -162,9 +157,9 @@ Ejecuta este fichero `jar` desde la CLI (línea de comandos).
 
 Debes obtener en consola una salida como esta, la representación en ASCII Art de una tarjeta con la puntuación de una partida de bolos.
 
-```
+```text
 - I see three of them out there.
- - Hit the one in the middle.- Rocky Balboa
+- Hit the one in the middle.- Rocky Balboa
 
 +---------+---------+---------+-----------+---------+-----------+---------+---------+---------+----------+
 | Round 1 | Round 2 | Round 3 | Round 4   | Round 5 | Round 6   | Round 7 | Round 8 | Round 9 | Round 10 |

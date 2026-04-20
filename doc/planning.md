@@ -18,6 +18,9 @@ Incluye items para chequear la configuración del proyecto con Maven o Gradle -a
 Estos items son los que uso en la rúbrica de corrección. Han de estar presentes en la hoja de ruta que elabores. NO realices la rúbrica.
 
 ---
+
+## Modularidad
+
 abstracción y legibilidad
 Encapsulamiento
 Ocultar la información
@@ -25,24 +28,40 @@ reutilización
 Paquetes
 Modularidad
 reutilización de la clase Course
+
 ---
+
+## SOLID
+
 SRP
 OCP
 ---
+
 @Override toString() de Player
 Casting de tipos byte a int, StrokePlay a GolfPlay
 Sobrecarga de métodos
 Lógica de item equals + hashcode
 ---
+
+## Enum Type
+
 tipo enumerado: Definido, getPoints(), y Printarlo .values()
+
 ---
+
+## Colecciones
 
 Colecciones / Estructura de datos
 Acceso a byte[] de getPlayerCourse()
+
 ---
+
+## Optional
+
 Optional<>
 loop: uso de streams
 if - else u operqador ternario Elvis
+
 ---
 Interfaces
 Clases abstractas

@@ -176,3 +176,11 @@ Debes obtener en consola una salida como esta, la representación en ASCII Art d
 |  9 - 10 |  9 - 10 |  9 - 10 | 1, 8 - 10 |  10 - 8 | 10 - 8 ,1 |  10 - 9 |  9 - 10 |  10 - 9 |   10 - 8 |
 +---------+---------+---------+-----------+---------+-----------+---------+---------+---------+----------+
 ```
+
+#### Checklist
+
+Valida tu solución mediante la lista de chequeo propuesta en:
+
+["./doc/roadmap.md"](./doc/roadmap.md)
+
+que corresponde a la rúbrica con la que se corrige este examen.

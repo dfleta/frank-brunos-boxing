@@ -201,7 +201,7 @@
 ## 18. Control de versiones — Git
 
 - [ ] Existe un fichero **`.gitignore`** que excluye `target/`, `build/`, `.class`, `.idea/`, etc.
-- [ ] Los mensajes de commit siguen el estándar **Conventional Commits** (`feat:`, `fix:`, `refactor:`, `test:`, `docs:`, `chore:`…). Indica el componente afectado y 
+- [ ] Los mensajes de commit siguen el estándar **Conventional Commits** (`feat:`, `fix:`, `refactor:`, `test:`, `docs:`, `chore:`…). Indica el componente afectado y el mensaje en infinitivo describiendo el propósito de la acción.
 - [ ] Existe un **repositorio remoto** conectado en GitHub (`git remote -v`).
 - [ ] Se han utilizado **ramas** (`git branch`) para el desarrollo de funcionalidades.
 - [ ] Existe un fichero **`README.md`** en la raíz del repositorio con descripción del proyecto, instrucciones de compilación y ejecución.
@@ -214,5 +214,3 @@
 - [ ] Las historias de usuario están vinculadas a las clases / funcionalidades implementadas.
 
 ---
-
-*Última actualización: abril 2026*

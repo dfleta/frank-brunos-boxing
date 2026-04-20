@@ -1,3 +1,6 @@
+
+# Fichero instruccciones IA para elaborar checklist / roadmap para el alumnado
+
 Este proyecto Java es un kata de programación para que el alumnado del ciclo de grado superior de desarrollo de aplicaciones multiplataforma aprenda distintos rudimentos de los fundamentos de programación en Java.
 
 Analiza el código del proyecto y elabora un fichero markdown con una lista de items que el alumno/a debe implementar o usar en su solución. NO realices una rúbrica. Se trata de realizar un hoja de ruta o guía para el alumno/a. Tan solo lista los items a chequear su presencia o uso agrupados en epígrafes para facilitar la autocorrección del alumno/a.
@@ -14,58 +17,62 @@ Incluye items para chequear la configuración del proyecto con Maven o Gradle -a
 
 Estos items son los que uso en la rúbrica de corrección. Han de estar presentes en la hoja de ruta que elabores. NO realices la rúbrica.
 
-abstracción y legibilidad	
-Encapsulamiento	
-Ocultar la información	
-reutilización	
-Paquetes	
-Modularidad	
-reutilización de la clase Course	
 ---
-SRP	
+abstracción y legibilidad
+Encapsulamiento
+Ocultar la información
+reutilización
+Paquetes
+Modularidad
+reutilización de la clase Course
+---
+SRP
 OCP
----	
-@Override toString() de Player	
-Casting de tipos byte a int, StrokePlay a GolfPlay	
-Sobrecarga de métodos	
-Lógica de item equals + hashcode	
 ---
-tipo enumerado: Definido, getPoints(), y Printarlo .values()	
+@Override toString() de Player
+Casting de tipos byte a int, StrokePlay a GolfPlay
+Sobrecarga de métodos
+Lógica de item equals + hashcode
 ---
-Colecciones / Estructura de datos: holes	
-Colecciones / Estructura de datos	
-Acceso a byte[] de getPlayerCourse()	
+tipo enumerado: Definido, getPoints(), y Printarlo .values()
 ---
-Optional<> de Player	
-loop: uso de streams	
+
+Colecciones / Estructura de datos
+Acceso a byte[] de getPlayerCourse()
+---
+Optional<>
+loop: uso de streams
 if - else u operqador ternario Elvis
 ---
-Interfaces	
-Clases abstractas	
+Interfaces
+Clases abstractas
 ---
-visibilidad métodos	
-mutabilidad variables	
-Excepciones	
+visibilidad métodos
+mutabilidad variables
+Excepciones
 ---
-dependencias entre módulos: bajo acoplamiento	
+dependencias entre módulos: bajo acoplamiento
 ---
-lógica de los métodos	
-código óptimo y eficiente		
+lógica de los métodos
+código óptimo y eficiente  
 ---
-test unidad: 
- - porcentaje de código cubierto	
- - eficiencia de los casos test	
- - dependencia Jacoco	
- dependencia Guava	
+
+test unidad:
+
+- porcentaje de código cubierto
+- eficiencia de los casos test
+- dependencia Jacoco
+- dependencia Guava
+
 ---
-Historias de usuario	
-Implementación del diagrama de clases UML del patrón Estrategia	
+Historias de usuario
+Implementación del diagrama de clases UML del patrón Estrategia
 ---
 Maven /gradle:
-(fat)JAR y Manifest	
-Proyecto Maven y POM valida? / Gradle tasks	
-.gitignore	
-coventional commit	
-Repo remoto coenctado en GitHub	
-Uso de ramas	
+(fat)JAR y Manifest
+Proyecto Maven y POM valida? / Gradle tasks
+.gitignore
+coventional commit
+Repo remoto coenctado en GitHub
+Uso de ramas
 Readme.md

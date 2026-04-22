@@ -42,16 +42,16 @@
 
 ---
 
-## 5. Patrón de diseño Estrategia (GoF)
+## 5. Patrón de diseño Factoría (GoF)
 
-- [ ] Se ha definido la interfaz `Round` (estrategia).
+- [ ] Se ha definido la interfaz `Round` (factoría).
 - [ ] Existen al menos tres clases concretas que implementan la interfaz `Round`:
   - [ ] `RegularRound` — asalto normal `10-9` / `9-10`.
   - [ ] `KnockdownRound` — asalto con derribo `10-8` / `8-10`.
   - [ ] `PointsDeducted` — asalto con deducción de puntos `1, 8 - 10` / `10 - 8 ,1`.
 - [ ] `ScoreCard` actúa como contexto del patrón: almacena una colección de `Round` y delega el cálculo de puntos en cada estrategia.
-- [ ] `RoundFactory` centraliza la creación de la estrategia correcta según la cadena de puntuación.
-- [ ] El diagrama de clases UML del patrón Estrategia está implementado correctamente.
+- [ ] `RoundFactory` centraliza la creación del tipo de `Round` según la cadena de puntuación.
+- [ ] El diagrama de clases UML del patrón Factoría está implementado correctamente.
 
 ---
 

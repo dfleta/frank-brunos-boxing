@@ -11,7 +11,7 @@ En particular, este kata se centra en el uso de la interfaz List y de la impleme
 
 Incluye, al menos estos items:
 
-Respecto a los estándares de codificación y buenas prácticas, y el diseño, incluye la evaluación de los 5 patrones de diseño SOLID e ten en cuenta que el patrón de diseño GoF que articula este diseño es el patrón estrategia.
+Respecto a los estándares de codificación y buenas prácticas, y el diseño, incluye la evaluación de los 5 patrones de diseño SOLID e ten en cuenta que el patrón de diseño GoF que articula este diseño es el patrón factoría.
 
 Incluye items para chequear la configuración del proyecto con Maven o Gradle -a elección del alumno- y la configuración del control de versiones git.
 

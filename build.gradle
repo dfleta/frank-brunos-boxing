@@ -15,14 +15,15 @@ repositories {
 }
 
 dependencies {
-    implementation group: 'com.github.freva', name: 'ascii-table', version: '1.8.0'
-    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.10.2'
-    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.10.2'
+    implementation("com.github.freva:ascii-table:1.9.0")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:5.14.3")
+    testImplementation("org.junit.jupiter:junit-jupiter-engine:5.14.3")
+    testImplementation("org.junit.platform:junit-platform-launcher:1.10.0")
     errorprone 'com.google.errorprone:error_prone_core:2.28.0'
 }
 
 application {
-    mainClassName = 'edu.badpals.brunosbox.Brunosbox'
+    mainClass = 'edu.badpals.brunosbox.Brunosbox'
 }
 
 jar {
